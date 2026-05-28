@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/*
+ * RAIFORD ROGERS MODERN BALLET
+ * Design: Editorial Performance Programme
+ * - Palette: warm parchment (#F7F4ED), ink black (#1A1A1A), dusty rose accent (#C9A5A0)
+ * - Type: Cormorant Garamond (display) + Inter Tight (body) + Inter small-caps (captions)
+ * - Layout: asymmetric editorial grids, side-margin captions, hairline rules with ornament
+ */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -8,6 +16,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -40,86 +49,160 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-sans: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-caption: "Inter", system-ui, sans-serif;
+
+  --ease-editorial: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  /* Editorial Performance Programme — LIGHT */
+  --radius: 0.125rem;
+  --background: oklch(0.962 0.012 80);          /* warm parchment #F7F4ED */
+  --foreground: oklch(0.205 0.008 60);          /* ink black #1A1A1A */
+  --card: oklch(0.98 0.008 80);
+  --card-foreground: oklch(0.205 0.008 60);
+  --popover: oklch(0.98 0.008 80);
+  --popover-foreground: oklch(0.205 0.008 60);
+
+  --primary: oklch(0.72 0.045 20);              /* dusty rose accent #C9A5A0 */
+  --primary-foreground: oklch(0.98 0.008 80);
+  --secondary: oklch(0.93 0.012 80);
+  --secondary-foreground: oklch(0.32 0.008 60);
+  --muted: oklch(0.93 0.010 80);
+  --muted-foreground: oklch(0.48 0.010 60);
+  --accent: oklch(0.72 0.045 20);
+  --accent-foreground: oklch(0.98 0.008 80);
+
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.86 0.012 75);               /* hairline rule color */
+  --input: oklch(0.86 0.012 75);
+  --ring: oklch(0.72 0.045 20);
+
+  --chart-1: oklch(0.72 0.045 20);
+  --chart-2: oklch(0.55 0.040 40);
+  --chart-3: oklch(0.65 0.060 80);
+  --chart-4: oklch(0.45 0.050 30);
+  --chart-5: oklch(0.78 0.030 60);
+
+  --sidebar: oklch(0.962 0.012 80);
+  --sidebar-foreground: oklch(0.205 0.008 60);
+  --sidebar-primary: oklch(0.72 0.045 20);
+  --sidebar-primary-foreground: oklch(0.98 0.008 80);
+  --sidebar-accent: oklch(0.93 0.010 80);
+  --sidebar-accent-foreground: oklch(0.32 0.008 60);
+  --sidebar-border: oklch(0.86 0.012 75);
+  --sidebar-ring: oklch(0.72 0.045 20);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
+  /* Editorial Performance Programme — DARK (theatrical) */
+  --background: oklch(0.155 0.006 60);          /* deep ink, near-black */
+  --foreground: oklch(0.92 0.012 80);           /* warm parchment text */
+  --card: oklch(0.20 0.006 60);
+  --card-foreground: oklch(0.92 0.012 80);
+  --popover: oklch(0.20 0.006 60);
+  --popover-foreground: oklch(0.92 0.012 80);
+
+  --primary: oklch(0.78 0.055 20);              /* slightly brighter rose in dark */
+  --primary-foreground: oklch(0.155 0.006 60);
+  --secondary: oklch(0.25 0.006 60);
+  --secondary-foreground: oklch(0.78 0.012 80);
+  --muted: oklch(0.25 0.006 60);
+  --muted-foreground: oklch(0.68 0.010 75);
+  --accent: oklch(0.78 0.055 20);
+  --accent-foreground: oklch(0.155 0.006 60);
+
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --border: oklch(0.92 0.012 80 / 18%);
+  --input: oklch(0.92 0.012 80 / 18%);
+  --ring: oklch(0.78 0.055 20);
+
+  --chart-1: oklch(0.78 0.055 20);
+  --chart-2: oklch(0.65 0.045 40);
+  --chart-3: oklch(0.72 0.060 80);
+  --chart-4: oklch(0.55 0.050 30);
+  --chart-5: oklch(0.82 0.030 60);
+
+  --sidebar: oklch(0.20 0.006 60);
+  --sidebar-foreground: oklch(0.92 0.012 80);
+  --sidebar-primary: oklch(0.78 0.055 20);
+  --sidebar-primary-foreground: oklch(0.155 0.006 60);
+  --sidebar-accent: oklch(0.25 0.006 60);
+  --sidebar-accent-foreground: oklch(0.92 0.012 80);
+  --sidebar-border: oklch(0.92 0.012 80 / 18%);
+  --sidebar-ring: oklch(0.78 0.055 20);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga", "calt";
+    letter-spacing: -0.005em;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+
+  /* Editorial display class — for hero and major section headings */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  .font-display-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Small caps caption — for credits, labels, programme notes */
+  .caption {
+    font-family: var(--font-caption);
+    font-size: 0.6875rem; /* 11px */
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .caption-sm {
+    font-family: var(--font-caption);
+    font-size: 0.625rem; /* 10px */
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  /* Roman numeral section labels — I. PRESS, II. ABOUT */
+  .roman-label {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    color: var(--muted-foreground);
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -131,27 +214,28 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  /* Subtle paper grain — gives surfaces tactile feel */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
 }
 
 @layer components {
   /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
+   * Custom container utility — preserved from template
    */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +246,114 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Editorial container — wider, more generous for editorial layouts */
+  .container-editorial {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 1360px;
+  }
+
+  @media (min-width: 768px) {
+    .container-editorial {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-editorial {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  /* Ornamental hairline rule with center motif */
+  .rule-ornament {
+    position: relative;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  .rule-ornament::after {
+    content: "◇";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--background);
+    color: var(--muted-foreground);
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
+  /* Editorial link underline animation */
+  .link-editorial {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-editorial::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s var(--ease-editorial);
+  }
+
+  .link-editorial:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  /* Editorial image — subtle hover treatment, no scaling */
+  .img-editorial {
+    transition: filter 0.6s var(--ease-editorial);
+  }
+
+  .img-editorial:hover {
+    filter: brightness(1.04) contrast(1.02);
+  }
+
+  /* Fade-in-on-scroll utility */
+  .reveal {
+    opacity: 0.001;
+    transform: translateY(10px);
+    transition: opacity 0.7s var(--ease-editorial), transform 0.7s var(--ease-editorial);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
