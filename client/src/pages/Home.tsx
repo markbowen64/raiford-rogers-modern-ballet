@@ -59,7 +59,7 @@ export default function Home() {
             </div>
 
             {/* Hero image with editorial title overlay */}
-            <div className="relative reveal">
+            <div className="relative reveal-image">
               <div className="relative overflow-hidden bg-muted aspect-[16/10] md:aspect-[16/9]">
                 <img
                   src={IMAGES.heroDancer}
@@ -124,9 +124,9 @@ export default function Home() {
           <div className="container-editorial">
             <div className="rule-ornament mb-12 md:mb-16" />
 
-            <div className="grid grid-cols-12 gap-3 md:gap-4 reveal">
+            <div className="grid grid-cols-12 gap-3 md:gap-4">
               {/* Asymmetric: staggered heights echo a corps formation */}
-              <div className="col-span-12 md:col-span-4">
+              <div className="col-span-12 md:col-span-4 reveal-image stagger-1">
                 <div className="aspect-[3/4] overflow-hidden bg-muted md:mt-8">
                   <img
                     src={PHOTO_STRIP[0].src}
@@ -135,7 +135,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="col-span-12 md:col-span-4">
+              <div className="col-span-12 md:col-span-4 reveal-image stagger-3">
                 <div className="aspect-[3/4] overflow-hidden bg-muted">
                   <img
                     src={PHOTO_STRIP[1].src}
@@ -144,7 +144,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="col-span-12 md:col-span-4">
+              <div className="col-span-12 md:col-span-4 reveal-image stagger-5">
                 <div className="aspect-[3/4] overflow-hidden bg-muted md:mt-16">
                   <img
                     src={PHOTO_STRIP[2].src}
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 caption text-center">Photographs — Steve Cohen</div>
+            <div className="mt-8 caption text-center reveal stagger-6">Photographs — Steve Cohen</div>
           </div>
         </section>
 
@@ -166,20 +166,20 @@ export default function Home() {
 
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-start">
               {/* Left — heading + text */}
-              <div className="col-span-12 md:col-span-5 reveal">
-                <div className="roman-label mb-5">I. About the Company</div>
-                <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] mb-8">
+              <div className="col-span-12 md:col-span-5">
+                <div className="roman-label mb-5 reveal-left">I. About the Company</div>
+                <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] mb-8 reveal-left stagger-1">
                   About
                 </h2>
 
-                <p className="text-lg md:text-[19px] leading-relaxed text-foreground/85 max-w-md">
+                <p className="text-lg md:text-[19px] leading-relaxed text-foreground/85 max-w-md reveal-left stagger-3">
                   Founded with a vision to push the boundaries of ballet while
                   honoring its classical roots, Raiford Rogers Modern Ballet has
                   established itself as a pioneering force in contemporary dance.
                 </p>
 
                 <Link href="/biography">
-                  <span className="mt-10 inline-flex items-center gap-2 group cursor-pointer">
+                  <span className="mt-10 inline-flex items-center gap-2 group cursor-pointer reveal-left stagger-5">
                     <span className="caption link-editorial group-hover:text-primary transition-colors">
                       Read Our Story
                     </span>
@@ -192,7 +192,7 @@ export default function Home() {
               </div>
 
               {/* Right — carousel */}
-              <div className="col-span-12 md:col-span-7 reveal">
+              <div className="col-span-12 md:col-span-7 reveal-image stagger-2">
                 <div className="relative">
                   <div className="relative overflow-hidden bg-muted aspect-[4/5]">
                     {CAROUSEL_IMAGES.map((img, i) => (
@@ -246,13 +246,13 @@ export default function Home() {
             <div className="rule-ornament mb-12 md:mb-20" />
 
             <div className="grid grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
-              <div className="col-span-12 md:col-span-4 reveal">
-                <div className="roman-label mb-5">II. Press</div>
-                <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
+              <div className="col-span-12 md:col-span-4">
+                <div className="roman-label mb-5 reveal-left">II. Press</div>
+                <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] reveal-left stagger-1">
                   Press
                 </h2>
               </div>
-              <div className="col-span-12 md:col-span-7 md:col-start-6 reveal">
+              <div className="col-span-12 md:col-span-7 md:col-start-6 reveal-right stagger-2">
                 <p className="text-base md:text-[17px] leading-relaxed text-muted-foreground max-w-lg md:mt-6">
                   Selected critical writings on the company's repertoire and
                   performances across nearly four decades of original work.
@@ -265,7 +265,7 @@ export default function Home() {
                 <article
                   key={i}
                   className="press-card reveal flex flex-col"
-                  style={{ transitionDelay: `${i * 80}ms` }}
+                  style={{ transitionDelay: `${i * 140}ms` }}
                 >
                   {/* Corner ornaments */}
                   <span className="press-card__corner press-card__corner--tl" aria-hidden />

@@ -27,17 +27,17 @@ export default function Biography() {
         <section className="border-b border-border">
           <div className="container-editorial py-16 md:py-28">
             <div className="grid grid-cols-12 gap-6">
-              <div className="col-span-12 md:col-span-8 reveal">
-                <div className="caption-sm mb-6">Programme · Biography</div>
-                <h1 className="font-display text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-tight">
+              <div className="col-span-12 md:col-span-8">
+                <div className="caption-sm mb-6 reveal-left">Programme · Biography</div>
+                <h1 className="font-display text-6xl md:text-8xl lg:text-[8.5rem] leading-[0.92] tracking-tight reveal-left stagger-1">
                   About
                 </h1>
-                <p className="mt-8 md:mt-10 font-display-italic text-2xl md:text-3xl text-muted-foreground max-w-2xl leading-snug">
+                <p className="mt-8 md:mt-10 font-display-italic text-2xl md:text-3xl text-muted-foreground max-w-2xl leading-snug reveal-left stagger-3">
                   The story of Raiford Rogers and the evolution of a modern
                   ballet company.
                 </p>
               </div>
-              <div className="hidden md:flex md:col-span-4 items-end justify-end reveal">
+              <div className="hidden md:flex md:col-span-4 items-end justify-end reveal-right stagger-2">
                 <div className="text-right">
                   <div className="caption-sm">Los Angeles</div>
                   <div className="caption-sm mt-2 text-foreground/50">
@@ -54,17 +54,23 @@ export default function Biography() {
           <div className="container-editorial">
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16">
               {/* Left — text */}
-              <div className="col-span-12 md:col-span-7 lg:col-span-7 reveal">
-                <div className="roman-label mb-5">
+              <div className="col-span-12 md:col-span-7 lg:col-span-7">
+                <div className="roman-label mb-5 reveal-left">
                   I. Choreographer & Artistic Director
                 </div>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-tight mb-10">
+                <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-tight mb-10 reveal-left stagger-1">
                   Raiford Rogers
                 </h2>
 
                 <div className="space-y-6 text-[16.5px] md:text-[17px] leading-[1.75] text-foreground/85 max-w-prose">
                   {BIOGRAPHY_PARAGRAPHS.map((p, i) => (
-                    <p key={i}>{p}</p>
+                    <p
+                      key={i}
+                      className="reveal"
+                      style={{ transitionDelay: `${Math.min(i, 4) * 60}ms` }}
+                    >
+                      {p}
+                    </p>
                   ))}
                 </div>
 
@@ -108,7 +114,7 @@ export default function Biography() {
               </div>
 
               {/* Right — portrait, sticky */}
-              <div className="col-span-12 md:col-span-5 lg:col-span-5 reveal">
+              <div className="col-span-12 md:col-span-5 lg:col-span-5 reveal-image stagger-2">
                 <div className="md:sticky md:top-28">
                   <div className="aspect-[4/5] overflow-hidden bg-muted">
                     <img
@@ -134,7 +140,7 @@ export default function Biography() {
           <div className="container-editorial">
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Image first on desktop */}
-              <div className="col-span-12 md:col-span-6 reveal order-2 md:order-1">
+              <div className="col-span-12 md:col-span-6 reveal-left order-2 md:order-1">
                 <div className="aspect-[4/5] overflow-hidden bg-muted">
                   <img
                     src={IMAGES.mikeNava}
@@ -147,12 +153,12 @@ export default function Biography() {
                 </div>
               </div>
 
-              <div className="col-span-12 md:col-span-6 reveal order-1 md:order-2">
-                <div className="roman-label mb-5">II. Collaborating Artist</div>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-tight mb-8">
+              <div className="col-span-12 md:col-span-6 order-1 md:order-2">
+                <div className="roman-label mb-5 reveal-right">II. Collaborating Artist</div>
+                <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-tight mb-8 reveal-right stagger-1">
                   Mike Nava
                 </h2>
-                <p className="text-[16.5px] md:text-[17px] leading-[1.75] text-foreground/85 max-w-prose">
+                <p className="text-[16.5px] md:text-[17px] leading-[1.75] text-foreground/85 max-w-prose reveal-right stagger-3">
                   Mike Nava is the painter behind the vibrant artwork and
                   painting progressions used in many of Raiford Rogers' ballet
                   productions. His large-scale projections create a multi-sensory
