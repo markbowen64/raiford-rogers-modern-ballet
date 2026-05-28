@@ -153,6 +153,24 @@
     font-family: var(--font-sans);
     font-feature-settings: "kern", "liga", "calt";
     letter-spacing: -0.005em;
+    /* Editorial parchment + flowing musical-staff texture overlay.
+       Two layers stacked over the base color:
+         1. A tiled SVG of long sweeping curves (notes and staff lines as one gesture)
+         2. A soft noise/grain to dimensionalize the parchment
+       Kept at low opacity (~3–40%) so it reads as a watermark rather than imagery. */
+    background-image:
+      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%231a1a1a' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M-50 180 C 200 60, 480 320, 760 180 S 1180 80, 1300 200' opacity='0.16'/%3E%3Cpath d='M-50 220 C 200 100, 480 360, 760 220 S 1180 120, 1300 240' opacity='0.14'/%3E%3Cpath d='M-50 260 C 200 140, 480 400, 760 260 S 1180 160, 1300 280' opacity='0.12'/%3E%3Cpath d='M-50 300 C 200 180, 480 440, 760 300 S 1180 200, 1300 320' opacity='0.11'/%3E%3Cpath d='M-50 340 C 200 220, 480 480, 760 340 S 1180 240, 1300 360' opacity='0.10'/%3E%3Cpath d='M-50 600 C 220 480, 520 740, 820 600 S 1200 500, 1320 620' opacity='0.13'/%3E%3Cpath d='M-50 640 C 220 520, 520 780, 820 640 S 1200 540, 1320 660' opacity='0.11'/%3E%3Cpath d='M-50 680 C 220 560, 520 820, 820 680 S 1200 580, 1320 700' opacity='0.10'/%3E%3C/g%3E%3Cg fill='%231a1a1a'%3E%3Ccircle cx='180' cy='178' r='3.4' opacity='0.22'/%3E%3Ccircle cx='430' cy='268' r='3.2' opacity='0.20'/%3E%3Ccircle cx='680' cy='198' r='3.6' opacity='0.22'/%3E%3Ccircle cx='930' cy='148' r='3.2' opacity='0.18'/%3E%3Ccircle cx='260' cy='608' r='3.4' opacity='0.20'/%3E%3Ccircle cx='560' cy='678' r='3.2' opacity='0.18'/%3E%3Ccircle cx='880' cy='618' r='3.4' opacity='0.20'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 1600px auto, 240px 240px;
+    background-position: top center, top left;
+    background-repeat: repeat, repeat;
+    background-attachment: fixed, fixed;
+  }
+
+  .dark body {
+    background-image:
+      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cg fill='none' stroke='%23f0e8d8' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M-50 180 C 200 60, 480 320, 760 180 S 1180 80, 1300 200' opacity='0.06'/%3E%3Cpath d='M-50 220 C 200 100, 480 360, 760 220 S 1180 120, 1300 240' opacity='0.05'/%3E%3Cpath d='M-50 260 C 200 140, 480 400, 760 260 S 1180 160, 1300 280' opacity='0.045'/%3E%3Cpath d='M-50 300 C 200 180, 480 440, 760 300 S 1180 200, 1300 320' opacity='0.04'/%3E%3Cpath d='M-50 340 C 200 220, 480 480, 760 340 S 1180 240, 1300 360' opacity='0.035'/%3E%3Cpath d='M-50 600 C 220 480, 520 740, 820 600 S 1200 500, 1320 620' opacity='0.045'/%3E%3Cpath d='M-50 640 C 220 520, 520 780, 820 640 S 1200 540, 1320 660' opacity='0.04'/%3E%3Cpath d='M-50 680 C 220 560, 520 820, 820 680 S 1200 580, 1320 700' opacity='0.035'/%3E%3C/g%3E%3Cg fill='%23f0e8d8'%3E%3Ccircle cx='180' cy='178' r='3.2' opacity='0.08'/%3E%3Ccircle cx='430' cy='268' r='3.0' opacity='0.07'/%3E%3Ccircle cx='680' cy='198' r='3.4' opacity='0.08'/%3E%3Ccircle cx='930' cy='148' r='3.0' opacity='0.07'/%3E%3Ccircle cx='260' cy='608' r='3.2' opacity='0.07'/%3E%3Ccircle cx='560' cy='678' r='3.0' opacity='0.06'/%3E%3Ccircle cx='880' cy='618' r='3.2' opacity='0.07'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.86  0 0 0 0.35 0'/%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4, h5, h6 {
