@@ -39,7 +39,7 @@ export default function Nav() {
           <Link href="/">
             <span className="font-display text-xl md:text-[1.6rem] tracking-tight leading-none">
               Raiford Rogers
-              <span className="hidden sm:inline font-display-italic text-muted-foreground">
+              <span className="hidden sm:inline text-muted-foreground">
                 {" "}
                 Modern Ballet
               </span>

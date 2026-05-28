@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <h3 className="font-display text-2xl md:text-[1.75rem] leading-tight">
               Raiford Rogers
-              <span className="font-display-italic block text-muted-foreground">
+              <span className="block text-muted-foreground">
                 Modern Ballet
               </span>
             </h3>

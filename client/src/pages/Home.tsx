@@ -70,7 +70,7 @@ export default function Home() {
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-12 bg-gradient-to-t from-black/55 via-black/10 to-transparent">
                   <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] text-white max-w-4xl">
                     Raiford Rogers
-                    <span className="font-display-italic block">Modern Ballet</span>
+                    <span className="block">Modern Ballet</span>
                   </h1>
                 </div>
               </div>
