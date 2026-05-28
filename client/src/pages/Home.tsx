@@ -75,29 +75,29 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Photo credit + featured links */}
-              <div className="mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-                <div className="caption md:col-span-3">
+              {/* Photo credit + featured links — caption left, Luckman logo centered, Watch Us right; all bottom-aligned */}
+              <div className="mt-4 md:mt-6 grid grid-cols-3 gap-4 md:gap-8 items-end">
+                <div className="caption self-end">
                   Photograph — A. Trelease
                 </div>
 
-                <div className="md:col-span-9 flex flex-wrap items-center gap-x-8 gap-y-4 md:justify-end">
+                <div className="flex justify-center self-end">
                   <a
                     href={LINKS.luckman}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 group"
+                    className="inline-flex items-end group"
+                    aria-label="The Luckman Fine Arts Complex at Cal State LA"
                   >
                     <img
                       src={IMAGES.luckmanLogo}
                       alt="The Luckman Fine Arts Complex at Cal State LA"
-                      className="h-9 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+                      className="h-9 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity block"
                     />
-                    <span className="caption-sm link-editorial hidden sm:inline">
-                      The Luckman
-                    </span>
                   </a>
+                </div>
 
+                <div className="flex justify-end self-end">
                   <a
                     href={LINKS.youtube}
                     target="_blank"
