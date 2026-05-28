@@ -108,8 +108,11 @@ export default function Home() {
                     className="flex items-center gap-2.5 group"
                   >
                     <Youtube
-                      className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors"
-                      strokeWidth={1.5}
+                      className="h-5 w-5 transition-colors"
+                      style={{ color: "#FF0033" }}
+                      fill="#FF0033"
+                      stroke="#ffffff"
+                      strokeWidth={1.6}
                     />
                     <span className="caption-sm link-editorial">Watch Us</span>
                   </a>
