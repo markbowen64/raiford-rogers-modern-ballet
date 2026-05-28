@@ -25,7 +25,7 @@ export default function Biography() {
       <main className="flex-1">
         {/* ============ COVER ============ */}
         <section className="border-b border-border">
-          <div className="container-editorial py-16 md:py-28">
+          <div className="container-editorial py-12 md:py-20">
             <div className="grid grid-cols-12 gap-6">
               <div className="col-span-12 md:col-span-8">
                 <div className="caption-sm mb-6 reveal-left">Programme · Biography</div>
@@ -50,7 +50,7 @@ export default function Biography() {
         </section>
 
         {/* ============ I. CHOREOGRAPHER & ARTISTIC DIRECTOR ============ */}
-        <section className="py-16 md:py-28">
+        <section className="py-12 md:py-20">
           <div className="container-editorial">
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16">
               {/* Left — text */}
@@ -136,7 +136,7 @@ export default function Biography() {
         </section>
 
         {/* ============ II. ARTIST MIKE NAVA ============ */}
-        <section className="py-16 md:py-28 border-t border-border bg-muted/40">
+        <section className="py-12 md:py-20 border-t border-border bg-muted/40">
           <div className="container-editorial">
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Image first on desktop */}

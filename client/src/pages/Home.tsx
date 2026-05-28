@@ -123,9 +123,9 @@ export default function Home() {
         </section>
 
         {/* ============ PHOTO STRIP — Steve Cohen ============ */}
-        <section className="mt-20 md:mt-28">
+        <section className="mt-12 md:mt-16">
           <div className="container-editorial">
-            <div className="rule-ornament mb-12 md:mb-16" />
+            <div className="rule-ornament mb-8 md:mb-10" />
 
             <div className="grid grid-cols-12 gap-3 md:gap-4">
               {/* Asymmetric: staggered heights echo a corps formation */}
@@ -163,9 +163,9 @@ export default function Home() {
         </section>
 
         {/* ============ I. ABOUT ============ */}
-        <section className="mt-24 md:mt-36">
+        <section className="mt-14 md:mt-20">
           <div className="container-editorial">
-            <div className="rule-ornament mb-12 md:mb-20" />
+            <div className="rule-ornament mb-8 md:mb-12" />
 
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-start">
               {/* Left — heading + text */}
@@ -244,11 +244,10 @@ export default function Home() {
         </section>
 
         {/* ============ II. PRESS ============ */}
-        <section className="mt-24 md:mt-36">
+                <section className="mt-14 md:mt-20">
           <div className="container-editorial">
-            <div className="rule-ornament mb-12 md:mb-20" />
-
-            <div className="grid grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
+            <div className="rule-ornament mb-8 md:mb-12" />
+            <div className="grid grid-cols-12 gap-8 md:gap-12 mb-10 md:mb-14">
               <div className="col-span-12 md:col-span-4">
                 <div className="roman-label mb-5 reveal-left">II. Press</div>
                 <h2 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] reveal-left stagger-1">
