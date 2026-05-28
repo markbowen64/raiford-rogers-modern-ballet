@@ -86,14 +86,17 @@ export default function Home() {
                     href={LINKS.luckman}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-end group"
-                    aria-label="The Luckman Fine Arts Complex at Cal State LA"
+                    className="inline-flex flex-col items-center gap-2 group"
+                    aria-label="The Luckman Fine Arts Complex — Box Office & Tickets"
                   >
                     <img
                       src={IMAGES.luckmanLogo}
                       alt="The Luckman Fine Arts Complex at Cal State LA"
                       className="h-9 md:h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity block"
                     />
+                    <span className="caption-sm link-editorial whitespace-nowrap">
+                      Box Office · Tickets
+                    </span>
                   </a>
                 </div>
 
