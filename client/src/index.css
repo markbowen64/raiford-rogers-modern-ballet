@@ -67,7 +67,7 @@
   --popover: oklch(0.98 0.008 80);
   --popover-foreground: oklch(0.205 0.008 60);
 
-  --primary: oklch(0.56 0.12 18);               /* deepened rose accent — more contrast on parchment */
+  --primary: oklch(0.54 0.17 20);               /* richer rose accent — more chroma, still editorial */
   --primary-foreground: oklch(0.98 0.008 80);
   --secondary: oklch(0.93 0.012 80);
   --secondary-foreground: oklch(0.32 0.008 60);
@@ -107,7 +107,7 @@
   --popover: oklch(0.20 0.006 60);
   --popover-foreground: oklch(0.92 0.012 80);
 
-  --primary: oklch(0.72 0.13 20);                /* brighter saturated rose in dark mode */
+  --primary: oklch(0.70 0.17 22);                /* richer saturated rose in dark mode */
   --primary-foreground: oklch(0.155 0.006 60);
   --secondary: oklch(0.25 0.006 60);
   --secondary-foreground: oklch(0.78 0.012 80);
