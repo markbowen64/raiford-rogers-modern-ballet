@@ -38,7 +38,7 @@ export default function Home() {
   }, [next]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col">
       <Nav />
 
       <main className="flex-1">
