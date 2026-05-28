@@ -158,14 +158,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 caption text-center reveal stagger-6">Photographs — Steve Cohen</div>
+            <div className="mt-6 caption text-center reveal stagger-6">Photographs — Steve Cohen</div>
           </div>
         </section>
 
         {/* ============ I. ABOUT ============ */}
-        <section className="mt-14 md:mt-20">
+        <section className="mt-6 md:mt-10">
           <div className="container-editorial">
-            <div className="rule-ornament mb-8 md:mb-12" />
+            <div className="rule-ornament mb-6 md:mb-8" />
 
             <div className="grid grid-cols-12 gap-8 md:gap-12 lg:gap-20 items-start">
               {/* Left — heading + text */}
