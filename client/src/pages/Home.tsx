@@ -261,18 +261,27 @@ export default function Home() {
               {PRESS_QUOTES.map((q, i) => (
                 <article
                   key={i}
-                  className="reveal flex flex-col"
+                  className="press-card reveal flex flex-col"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="caption-sm mb-5 text-primary">№ 0{i + 1}</div>
-                  <div className="font-display-italic text-primary text-3xl leading-none mb-4">
-                    "
+                  {/* Corner ornaments */}
+                  <span className="press-card__corner press-card__corner--tl" aria-hidden />
+                  <span className="press-card__corner press-card__corner--tr" aria-hidden />
+                  <span className="press-card__corner press-card__corner--bl" aria-hidden />
+                  <span className="press-card__corner press-card__corner--br" aria-hidden />
+
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="caption-sm text-primary">№ 0{i + 1}</div>
+                    <div className="h-px flex-1 ml-4 bg-border press-card__rule" />
                   </div>
-                  <blockquote className="font-display text-[1.35rem] md:text-[1.45rem] leading-[1.35] text-foreground/90">
+                  <div className="font-display-italic text-primary text-4xl leading-none mb-4 press-card__quote-mark">
+                    “
+                  </div>
+                  <blockquote className="font-display text-[1.3rem] md:text-[1.4rem] leading-[1.35] text-foreground/90 relative z-10">
                     {q.quote}
                   </blockquote>
-                  <div className="mt-auto pt-8">
-                    <div className="h-px w-10 bg-foreground/30 mb-3" />
+                  <div className="mt-auto pt-8 relative z-10">
+                    <div className="h-px w-10 bg-foreground/30 mb-3 press-card__byline-rule" />
                     <cite className="caption not-italic">— {q.source}</cite>
                   </div>
                 </article>
